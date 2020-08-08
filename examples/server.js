@@ -32,10 +32,11 @@ router.get('/simple/get', function(req, res) {
     msg: `hello world`
   })
 })
+
 router.get('/base/get', function(req, res) {
   res.json(req.query)
 })
-router.post('/base/post', function(req, res) {
+router.post('/base/post1', function(req, res) {
   res.json(req.body)
 })
 router.post('/base/buffer', function(req, res) {
@@ -49,6 +50,12 @@ router.post('/base/buffer', function(req, res) {
     let buf = Buffer.concat(msg)
     res.json(buf.toJSON())
   })
+})
+router.post('/base/post2', function(req, res) {
+  res.json(req.body)
+})
+router.post('/base/post3', function(req, res) {
+  res.json(req.body)
 })
 
 app.use(router)
