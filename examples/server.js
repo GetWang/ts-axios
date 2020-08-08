@@ -57,6 +57,12 @@ router.post('/base/post2', function(req, res) {
 router.post('/base/post3', function(req, res) {
   res.json(req.body)
 })
+router.post('/base/post4', function(req, res) {
+  res.json(req.body)
+})
+router.post('/base/post5', function(req, res) {
+  res.json(req.body)
+})
 
 app.use(router)
 

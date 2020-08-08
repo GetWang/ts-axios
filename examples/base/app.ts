@@ -95,3 +95,26 @@ axios({
   url: '/base/post3',
   data: searchParams
 })
+
+axios({
+  method: 'post',
+  url: '/base/post4',
+  data: {
+    a: 3,
+    b: 4
+  }
+}).then(res => {
+  console.log('/base/post4 - res', res)
+})
+
+axios({
+  method: 'post',
+  url: '/base/post5',
+  responseType: 'json',
+  data: {
+    a: 3,
+    b: 4
+  }
+}).then(res => {
+  console.log('/base/post5 - res', res)
+})
