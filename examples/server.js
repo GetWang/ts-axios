@@ -74,7 +74,14 @@ router.get('/error/get', function(req, res) {
     res.end()
   }
 })
-router.get('/error/timeout', function(req, res) {
+router.get('/error/timeout1', function(req, res) {
+  setTimeout(() => {
+    res.json({
+      msg: `hello world`
+    })
+  }, 3000)
+})
+router.get('/error/timeout2', function(req, res) {
   setTimeout(() => {
     res.json({
       msg: `hello world`
