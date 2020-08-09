@@ -20,7 +20,7 @@ function processConfig(config: AxiosRequestConfig): void {
 
 function transformUrl(config: AxiosRequestConfig): string {
   const { url, params } = config
-  return bulidURL(url, params)
+  return bulidURL(url!, params)
 }
 
 function transformRequestData(config: AxiosRequestConfig): any {
