@@ -178,3 +178,34 @@ const instance4 = axios.create({
 instance4.get('017e1d5cafd9caa801208f8bd6e372.jpg')
 
 instance4.get('https://img.zcool.cn/community/017e1d5cafd9caa801208f8bd6e372.jpg')
+
+function getA() {
+  return axios.get('/more/A')
+}
+
+function getB() {
+  return axios.get('/more/B')
+}
+
+axios.all([getA(), getB()]).then(
+  axios.spread(function(resA, resB) {
+    console.log(resA.data)
+    console.log(resB.data)
+  })
+)
+
+axios.all([getA(), getB()]).then(([resA, resB]) => {
+  console.log(resA.data)
+  console.log(resB.data)
+})
+
+const fakeConfig = {
+  baseURL: 'https://www.baidu.com/',
+  url: '/user/12345',
+  params: {
+    idClient: 1,
+    idTest: 2,
+    testString: 'thisIsATest'
+  }
+}
+console.log(axios.getUri(fakeConfig))
