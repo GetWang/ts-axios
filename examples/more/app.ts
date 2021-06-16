@@ -170,3 +170,11 @@ instance3
   .then(res => {
     console.log(res)
   })
+
+const instance4 = axios.create({
+  baseURL: 'https://img.zcool.cn/community/'
+})
+
+instance4.get('017e1d5cafd9caa801208f8bd6e372.jpg')
+
+instance4.get('https://img.zcool.cn/community/017e1d5cafd9caa801208f8bd6e372.jpg')
