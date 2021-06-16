@@ -1,5 +1,7 @@
 import axios from '../../src/index'
 
+import qs from 'qs'
+
 import NProgress from 'nprogress'
 
 import { AxiosError } from '../../src/types'
@@ -129,4 +131,42 @@ axios
   })
   .catch((e: AxiosError) => {
     console.log(e.message)
+  })
+
+axios
+  .get('/more/get', {
+    params: new URLSearchParams('a=b&c=d')
+  })
+  .then(res => {
+    console.log(res)
+  })
+
+axios
+  .get('/more/get', {
+    params: {
+      a: 1,
+      b: 2,
+      c: ['a', 'b', 'c']
+    }
+  })
+  .then(res => {
+    console.log(res)
+  })
+
+const instance3 = axios.create({
+  paramsSerializer(params) {
+    return qs.stringify(params, { arrayFormat: 'brackets' })
+  }
+})
+
+instance3
+  .get('/more/get', {
+    params: {
+      a: 1,
+      b: 2,
+      c: ['a', 'b', 'c']
+    }
+  })
+  .then(res => {
+    console.log(res)
   })
