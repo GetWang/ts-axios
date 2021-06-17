@@ -16,7 +16,7 @@ function encode(val: string): string {
     .replace(/%5D/gi, ']')
 }
 
-export function bulidURL(
+export function buildURL(
   url: string,
   params?: any,
   paramsSerializer?: (params: any) => string
