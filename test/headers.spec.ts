@@ -71,7 +71,7 @@ describe('headers', () => {
     })
   })
 
-  it('should preserve content-type if data is false', () => {
+  test('should preserve content-type if data is false', () => {
     axios.post('/foo', false)
 
     return getAjaxRequest().then(request => {
